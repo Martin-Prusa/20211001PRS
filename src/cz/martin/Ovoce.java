@@ -31,5 +31,8 @@ public class Ovoce {
             else System.out.println("Neznámé");
             s = sc.nextLine();
         }
+
+        System.out.println("Ovoce: "+ovoce.toString());
+        System.out.println("Zelenina: "+zelenina.toString());
     }
 }
