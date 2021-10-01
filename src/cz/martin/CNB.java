@@ -1,7 +1,6 @@
 package cz.martin;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Scanner;
 
 public class CNB {
@@ -41,6 +40,7 @@ public class CNB {
                 "Velká Británie|libra|1|GBP|29,627\n" +
                 "CR|koruna|1|CZK|1";
 
+        kurzy = kurzy.replaceAll(",", ".");
         String[] kurzyArray = kurzy.split("\n");
         HashMap<String, Float> k = new HashMap<>();
         for (String s : kurzyArray) {
@@ -52,8 +52,13 @@ public class CNB {
         while(sc.hasNext()) {
             String[] input = sc.nextLine().split(" ");
             int pocet = Integer.parseInt(input[0]);
-            String mena = input[1];
-            String mena1 = input[3];
+            String mena = input[1].toUpperCase();
+            String mena1 = input[3].toUpperCase();
+            if(!k.containsKey(mena) || !k.containsKey(mena1)) {
+                System.out.println("Neznámá měna");
+                continue;
+            }
+            System.out.println(pocet/k.get(mena1)*k.get(mena));
         }
     }
 }
