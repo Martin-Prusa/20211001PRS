@@ -12,7 +12,7 @@ public class Ovoce {
         int ovoceCount = Integer.parseInt(sc.nextLine());
         for (int i = 0; i < ovoceCount; i++) {
             String s = sc.nextLine().toLowerCase();
-            if(ovoce.contains(s)) System.out.println("Toto ovoce je jiz zadano");
+            if(ovoce.contains(s)) System.out.println("Jiz zadano");
             else ovoce.add(s);
         }
 

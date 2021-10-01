@@ -1,5 +1,6 @@
 package cz.martin;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Suma {
@@ -7,10 +8,17 @@ public class Suma {
     public static void main(String[] args) {
 	// write your code here
         Scanner sc = new Scanner(System.in);
-        int suma = 0;
+        ArrayList<Integer> list = new ArrayList<>();
         while(sc.hasNext()) {
-            suma += sc.nextInt();
+            list.add(Integer.parseInt(sc.nextLine()));
         }
-        System.out.println(suma);
+
+        int sum = 0;
+
+        for (int i : list) {
+            sum+=i;
+        }
+
+        System.out.println(sum);
     }
 }
