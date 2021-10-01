@@ -12,16 +12,15 @@ public class Ovoce {
         int ovoceCount = Integer.parseInt(sc.nextLine());
         for (int i = 0; i < ovoceCount; i++) {
             String s = sc.nextLine().toLowerCase();
-            if(ovoce.contains(s)) System.out.println("Jiz zadano");
-            else ovoce.add(s);
+            //if(ovoce.contains(s)) System.out.println("Jiz zadano");
+            if(!ovoce.add(s)) System.out.println("Jiz zadano");;
         }
 
         System.out.println("Zadej pocet zeleniny");
         int zeleninaCount = Integer.parseInt(sc.nextLine());
         for (int i = 0; i < zeleninaCount; i++) {
             String s = sc.nextLine().toLowerCase();
-            if(ovoce.contains(s) || zelenina.contains(s)) System.out.println("Jiz zadano");
-            else zelenina.add(s);
+            if(ovoce.contains(s) || !zelenina.add(s)) System.out.println("Jiz zadano");
         }
 
 
